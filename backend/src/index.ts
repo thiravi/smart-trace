@@ -58,7 +58,10 @@ class PerformanceSnapBackend {
         'http://127.0.0.1:8080',
         'https://smart-trace-yr17.onrender.com',
         'https://smart-trace.onrender.com',
+        'https://smart-trace-qzbj9crvh-thiraviarajb-7172.vercel.app',
         'https://*.onrender.com',
+        'https://*.vercel.app',
+        'https://*.github.dev',
         ...configured,
       ];
     };
@@ -80,9 +83,8 @@ class PerformanceSnapBackend {
       });
     };
 
-    // CORS configuration - Allow file:// protocol and development origins
-    this.app.use(cors({
-      origin: (origin, callback) => {
+    const corsOptions: cors.CorsOptions = {
+      origin: (origin: string | undefined, callback: (error: Error | null, allow?: boolean) => void) => {
         // Allow requests with no origin (like mobile apps, curl, postman, or file:// protocol)
         if (!origin) return callback(null, true);
 
@@ -101,10 +103,14 @@ class PerformanceSnapBackend {
         callback(new Error(`Not allowed by CORS: ${origin}`));
       },
       credentials: true,
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
       optionsSuccessStatus: 200 // Some legacy browsers choke on 204
-    }));
+    };
+
+    // CORS configuration - Allow file:// protocol and development origins
+    this.app.use(cors(corsOptions));
+    this.app.options('*', cors(corsOptions));
 
     // Compression and parsing
     this.app.use(compression());

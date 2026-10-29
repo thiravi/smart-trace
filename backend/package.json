@@ -1,5 +1,5 @@
 {
-  "name": "@cision-hackathon/performancesnap-backend",
+  "name": "@samplecompany-hackathon/performancesnap-backend",
   "version": "1.0.0",
   "description": "Highly customizable backend service for consuming PerformanceSnap feedback payloads",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "monitoring",
     "backend"
   ],
-  "author": "Cision Hackathon Team",
+  "author": "samplecompany Hackathon Team",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",

@@ -1,4 +1,4 @@
-# @cision-hackathon/smarttrace
+# @samplecompany-hackathon/smarttrace
 
 A lightweight, embeddable feedback widget that automatically records user sessions and captures detailed system information for better bug reports and user feedback.
 
@@ -14,19 +14,19 @@ Create a `.npmrc` file in your project root (or update your global one):
 
 ```bash
 # Option 1: Project-specific .npmrc (recommended)
-echo "@cision-hackathon:registry=https://npm.pkg.github.com/
+echo "@samplecompany-hackathon:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=YOUR_TOKEN_HERE
 always-auth=true" > .npmrc
 
 # Option 2: Global .npmrc (affects all projects)
-npm config set @cision-hackathon:registry https://npm.pkg.github.com/
+npm config set @samplecompany-hackathon:registry https://npm.pkg.github.com/
 npm config set //npm.pkg.github.com/:_authToken YOUR_TOKEN_HERE
 npm config set always-auth true
 ```
 
 Or manually create `.npmrc` in your project root:
 ```properties
-@cision-hackathon:registry=https://npm.pkg.github.com/
+@samplecompany-hackathon:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=YOUR_TOKEN_HERE
 always-auth=true
 ```
@@ -48,18 +48,18 @@ always-auth=true
 
 ```bash
 # Install from the private npm registry
-npm install @cision-hackathon/smarttrace
+npm install @samplecompany-hackathon/smarttrace
 
 # Or with yarn
-yarn add @cision-hackathon/smarttrace
+yarn add @samplecompany-hackathon/smarttrace
 ```
 
 ### Basic Usage
 
 #### Option 1: ES Modules (Recommended for modern bundlers)
 ```javascript
-import { initSmartTrace } from '@cision-hackathon/smarttrace';
-import '@cision-hackathon/smarttrace/style.css';
+import { initSmartTrace } from '@samplecompany-hackathon/smarttrace';
+import '@samplecompany-hackathon/smarttrace/style.css';
 
 // Initialize with default settings
 const widget = initSmartTrace();
@@ -67,16 +67,16 @@ const widget = initSmartTrace();
 
 #### Option 2: CommonJS
 ```javascript
-const { initSmartTrace } = require('@cision-hackathon/smarttrace');
-require('@cision-hackathon/smarttrace/style.css');
+const { initSmartTrace } = require('@samplecompany-hackathon/smarttrace');
+require('@samplecompany-hackathon/smarttrace/style.css');
 
 const widget = initSmartTrace();
 ```
 
 #### Option 3: Direct Script Tag (CDN/Self-hosted)
 ```html
-<link rel="stylesheet" href="./node_modules/@cision-hackathon/smarttrace/dist/smarttrace.css">
-<script src="./node_modules/@cision-hackathon/smarttrace/dist/smarttrace.umd.cjs"></script>
+<link rel="stylesheet" href="./node_modules/@samplecompany-hackathon/smarttrace/dist/smarttrace.css">
+<script src="./node_modules/@samplecompany-hackathon/smarttrace/dist/smarttrace.umd.cjs"></script>
 <script>
   const { initSmartTrace } = SmartTrace;
   initSmartTrace();
@@ -95,8 +95,8 @@ const widget = initSmartTrace();
 ### React/Next.js
 ```tsx
 import { useEffect } from 'react';
-import { initSmartTrace, type SmartTraceConfig } from '@cision-hackathon/smarttrace';
-import '@cision-hackathon/smarttrace/style.css';
+import { initSmartTrace, type SmartTraceConfig } from '@samplecompany-hackathon/smarttrace';
+import '@samplecompany-hackathon/smarttrace/style.css';
 
 export default function App() {
   useEffect(() => {
@@ -125,8 +125,8 @@ export default function App() {
 ```vue
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
-import { initSmartTrace } from '@cision-hackathon/smarttrace';
-import '@cision-hackathon/smarttrace/style.css';
+import { initSmartTrace } from '@samplecompany-hackathon/smarttrace';
+import '@samplecompany-hackathon/smarttrace/style.css';
 
 let widget = null;
 
@@ -149,7 +149,7 @@ onUnmounted(() => {
 ```typescript
 // app.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { initSmartTrace, SmartTrace } from '@cision-hackathon/smarttrace';
+import { initSmartTrace, SmartTrace } from '@samplecompany-hackathon/smarttrace';
 
 @Component({
   selector: 'app-root',
@@ -180,7 +180,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 ```css
 /* app.component.css or styles.css */
-@import '@cision-hackathon/smarttrace/style.css';
+@import '@samplecompany-hackathon/smarttrace/style.css';
 ```
 
 ## 🏢 Organization Setup
@@ -223,7 +223,7 @@ import {
   SmartTrace,
   type SmartTraceConfig,
   type FeedbackData 
-} from '@cision-hackathon/smarttrace';
+} from '@samplecompany-hackathon/smarttrace';
 
 const config: SmartTraceConfig = {
   position: 'bottom-right',

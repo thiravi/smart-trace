@@ -149,7 +149,7 @@ export function createAdminRoutes(feedbackService: FeedbackService, configManage
       const { active = true, team } = req.query;
       
       // This would get active user sessions
-      const sessions = [];
+      const sessions: Array<Record<string, unknown>> = [];
 
       res.json({
         success: true,

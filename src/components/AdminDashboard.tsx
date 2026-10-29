@@ -64,7 +64,7 @@ interface FeedbackResponse {
   timestamp: string;
 }
 
-const JIRA_TICKET_URL = 'https://cision.atlassian.net/browse/DEE-4357'
+const JIRA_TICKET_URL = 'https://samplecompany.atlassian.net/browse/TEST-123'
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
