@@ -1,0 +1,481 @@
+/* SmartTrace Widget Styles */
+/* This CSS replaces Tailwind classes for the embeddable widget */
+
+#smart-trace-widget {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.5;
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+
+#smart-trace-widget * {
+  box-sizing: border-box;
+}
+
+/* Remove the fixed class since it's already applied inline */
+#smart-trace-widget .fixed {
+  position: relative; /* Override to relative since container is already fixed */
+}
+
+#smart-trace-widget .bottom-6 {
+  bottom: 1.5rem;
+}
+
+#smart-trace-widget .right-6 {
+  right: 1.5rem;
+}
+
+/* Base positioning and z-index */
+#smart-trace-widget .z-50 {
+  z-index: 50;
+}
+
+/* Layout utilities */
+#smart-trace-widget .w-96 {
+  width: 24rem;
+}
+
+#smart-trace-widget .w-full {
+  width: 100%;
+}
+
+#smart-trace-widget .w-14 {
+  width: 3.5rem;
+}
+
+#smart-trace-widget .w-16 {
+  width: 4rem;
+}
+
+#smart-trace-widget .w-8 {
+  width: 2rem;
+}
+
+#smart-trace-widget .w-4 {
+  width: 1rem;
+}
+
+#smart-trace-widget .w-2 {
+  width: 0.5rem;
+}
+
+#smart-trace-widget .h-14 {
+  height: 3.5rem;
+}
+
+#smart-trace-widget .h-16 {
+  height: 4rem;
+}
+
+#smart-trace-widget .h-8 {
+  height: 2rem;
+}
+
+#smart-trace-widget .h-4 {
+  height: 1rem;
+}
+
+#smart-trace-widget .h-2 {
+  height: 0.5rem;
+}
+
+/* Spacing */
+#smart-trace-widget .mb-4 {
+  margin-bottom: 1rem;
+}
+
+#smart-trace-widget .mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+#smart-trace-widget .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#smart-trace-widget .p-4 {
+  padding: 1rem;
+}
+
+#smart-trace-widget .p-6 {
+  padding: 1.5rem;
+}
+
+#smart-trace-widget .p-3 {
+  padding: 0.75rem;
+}
+
+#smart-trace-widget .p-1 {
+  padding: 0.25rem;
+}
+
+#smart-trace-widget .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#smart-trace-widget .py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#smart-trace-widget .py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#smart-trace-widget .pt-2 {
+  padding-top: 0.5rem;
+}
+
+/* Backgrounds */
+#smart-trace-widget .bg-white {
+  background-color: white;
+}
+
+#smart-trace-widget .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+#smart-trace-widget .from-purple-600 {
+  --tw-gradient-from: #9333ea;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(147, 51, 234, 0));
+}
+
+#smart-trace-widget .to-blue-600 {
+  --tw-gradient-to: #2563eb;
+}
+
+#smart-trace-widget .from-purple-700 {
+  --tw-gradient-from: #7c3aed;
+}
+
+#smart-trace-widget .to-blue-700 {
+  --tw-gradient-to: #1d4ed8;
+}
+
+#smart-trace-widget .bg-red-500 {
+  background-color: #ef4444;
+}
+
+#smart-trace-widget .bg-pink-500 {
+  background-color: #ec4899;
+}
+
+#smart-trace-widget .bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+#smart-trace-widget .bg-red-50 {
+  background-color: #fef2f2;
+}
+
+#smart-trace-widget .bg-red-100 {
+  background-color: #fee2e2;
+}
+
+#smart-trace-widget .bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+#smart-trace-widget .bg-green-100 {
+  background-color: #dcfce7;
+}
+
+#smart-trace-widget .bg-red-500 {
+  background-color: #ef4444;
+}
+
+/* Text colors */
+#smart-trace-widget .text-white {
+  color: white;
+}
+
+#smart-trace-widget .text-gray-600 {
+  color: #4b5563;
+}
+
+#smart-trace-widget .text-gray-700 {
+  color: #374151;
+}
+
+#smart-trace-widget .text-gray-800 {
+  color: #1f2937;
+}
+
+#smart-trace-widget .text-red-700 {
+  color: #b91c1c;
+}
+
+#smart-trace-widget .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#smart-trace-widget .text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+#smart-trace-widget .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#smart-trace-widget .text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+#smart-trace-widget .text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+#smart-trace-widget .text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+/* Typography */
+#smart-trace-widget .font-bold {
+  font-weight: 700;
+}
+
+#smart-trace-widget .font-semibold {
+  font-weight: 600;
+}
+
+#smart-trace-widget .font-medium {
+  font-weight: 500;
+}
+
+#smart-trace-widget .text-center {
+  text-align: center;
+}
+
+/* Borders */
+#smart-trace-widget .border {
+  border-width: 1px;
+}
+
+#smart-trace-widget .border-2 {
+  border-width: 2px;
+}
+
+#smart-trace-widget .border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+#smart-trace-widget .border-gray-300 {
+  border-color: #d1d5db;
+}
+
+#smart-trace-widget .border-red-200 {
+  border-color: #fecaca;
+}
+
+#smart-trace-widget .rounded-2xl {
+  border-radius: 1rem;
+}
+
+#smart-trace-widget .rounded-xl {
+  border-radius: 0.75rem;
+}
+
+#smart-trace-widget .rounded-lg {
+  border-radius: 0.5rem;
+}
+
+#smart-trace-widget .rounded-full {
+  border-radius: 9999px;
+}
+
+/* Shadows */
+#smart-trace-widget .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+#smart-trace-widget .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#smart-trace-widget .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#smart-trace-widget .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Flexbox */
+#smart-trace-widget .flex {
+  display: flex;
+}
+
+#smart-trace-widget .flex-1 {
+  flex: 1 1 0%;
+}
+
+#smart-trace-widget .items-center {
+  align-items: center;
+}
+
+#smart-trace-widget .justify-center {
+  justify-content: center;
+}
+
+#smart-trace-widget .justify-between {
+  justify-content: space-between;
+}
+
+#smart-trace-widget .gap-2 {
+  gap: 0.5rem;
+}
+
+#smart-trace-widget .gap-3 {
+  gap: 0.75rem;
+}
+
+/* Layout */
+#smart-trace-widget .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem;
+}
+
+#smart-trace-widget .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+#smart-trace-widget .block {
+  display: block;
+}
+
+#smart-trace-widget .overflow-hidden {
+  overflow: hidden;
+}
+
+/* Transitions and animations */
+#smart-trace-widget .transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#smart-trace-widget .transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#smart-trace-widget .animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#smart-trace-widget .animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover states */
+#smart-trace-widget .hover\:bg-red-600:hover {
+  background-color: #dc2626;
+}
+
+#smart-trace-widget .hover\:bg-pink-600:hover {
+  background-color: #db2777;
+}
+
+#smart-trace-widget .hover\:bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+#smart-trace-widget .hover\:bg-white\/20:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#smart-trace-widget .hover\:bg-red-200:hover {
+  background-color: #fecaca;
+}
+
+#smart-trace-widget .hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+
+#smart-trace-widget .hover\:bg-gray-50:hover {
+  background-color: #f9fafb;
+}
+
+#smart-trace-widget .hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#smart-trace-widget .hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+#smart-trace-widget .hover\:scale-110:hover {
+  transform: scale(1.1);
+}
+
+#smart-trace-widget .hover\:from-purple-700:hover {
+  --tw-gradient-from: #7c3aed;
+}
+
+#smart-trace-widget .hover\:to-blue-700:hover {
+  --tw-gradient-to: #1d4ed8;
+}
+
+/* Focus states */
+#smart-trace-widget .focus\:ring-2:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.5);
+}
+
+#smart-trace-widget .focus\:ring-purple-500:focus {
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.5);
+}
+
+#smart-trace-widget .focus\:border-transparent:focus {
+  border-color: transparent;
+}
+
+/* Disabled states */
+#smart-trace-widget .disabled\:opacity-50:disabled {
+  opacity: 0.5;
+}
+
+/* Form elements */
+#smart-trace-widget textarea,
+#smart-trace-widget input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#smart-trace-widget .resize-none {
+  resize: none;
+}
+
+#smart-trace-widget .opacity-90 {
+  opacity: 0.9;
+}
+
+/* Custom border styles */
+#smart-trace-widget .border-dashed {
+  border-style: dashed;
+}

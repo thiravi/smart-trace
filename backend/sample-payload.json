@@ -1,0 +1,68 @@
+{
+  "type": "bug",
+  "description": "The page takes too long to load and the submit button is not responding properly. I clicked it multiple times but nothing happened.",
+  "email": "test.user@company.com",
+  "team": "frontend",
+  "systemInfo": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "language": "en-US",
+    "platform": "Win32",
+    "screenResolution": "1920x1080",
+    "viewport": "1920x969",
+    "timezone": "America/New_York",
+    "connection": {
+      "effectiveType": "4g",
+      "downlink": 2.1,
+      "rtt": 85
+    },
+    "memory": "16 GB",
+    "cores": 8,
+    "url": "https://app.company.com/dashboard/projects",
+    "timestamp": "2024-01-15T14:30:45.123Z",
+    "referrer": "https://app.company.com/login"
+  },
+  "sessionRecording": [
+    {
+      "type": 4,
+      "data": {
+        "href": "https://app.company.com/dashboard/projects",
+        "width": 1920,
+        "height": 969
+      },
+      "timestamp": 1705327845000
+    },
+    {
+      "type": 2,
+      "data": {
+        "node": {
+          "type": 1,
+          "tagName": "button",
+          "attributes": {
+            "id": "submit-btn",
+            "class": "btn btn-primary"
+          }
+        },
+        "source": 2
+      },
+      "timestamp": 1705327847500
+    },
+    {
+      "type": 3,
+      "data": {
+        "source": 2,
+        "type": 2,
+        "id": 15,
+        "x": 650,
+        "y": 400
+      },
+      "timestamp": 1705327848000
+    }
+  ],
+  "performanceMetrics": {
+    "loadTime": 4200,
+    "domReady": 3100,
+    "firstContentfulPaint": 2800,
+    "largestContentfulPaint": 4100,
+    "cumulativeLayoutShift": 0.15
+  }
+}

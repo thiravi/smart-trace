@@ -1,0 +1,78 @@
+{
+  "name": "@cision-hackathon/smarttrace",
+  "version": "1.0.6",
+  "type": "module",
+  "description": "Embeddable feedback widget with session recording and system information capture",
+  "main": "dist/smart-trace.umd.cjs",
+  "module": "dist/smart-trace.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "WIDGET-README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/smart-trace.es.js",
+      "require": "./dist/smart-trace.umd.cjs"
+    },
+    "./style.css": "./dist/smarttrace.css"
+  },
+  "publishConfig": {
+    "registry": "https://npm.your-org.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cision-Hackathon/smart-trace.git"
+  },
+  "keywords": [
+    "feedback",
+    "widget",
+    "session-recording",
+    "bug-report",
+    "embeddable",
+    "rrweb"
+  ],
+  "author": "Cision",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && cp src/index.d.ts dist/",
+    "build:widget": "vite build --mode widget && cp src/index.d.ts dist/",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "lucide-react": "^0.548.0",
+    "mongodb": "^7.7.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.9.5",
+    "rrweb": "^2.0.0-alpha.4",
+    "rrweb-player": "^1.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "terser": "^5.16.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.45.0",
+    "vite": "^7.1.7"
+  }
+}
