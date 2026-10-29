@@ -250,7 +250,7 @@ npm test
 npm run test:coverage
 
 # Test specific endpoint
-curl -X POST http://localhost:3000/api/feedback/submit \
+curl -X POST https://smart-trace-yr17.onrender.com/api/feedback/submit \
   -H "Content-Type: application/json" \
   -d @sample-payload.json
 ```
@@ -356,7 +356,7 @@ Configure log rotation in production:
 LOG_LEVEL=debug npm run dev
 
 # Check processor execution
-curl -X GET http://localhost:3000/api/config/global
+curl -X GET https://smart-trace-yr17.onrender.com/api/config/global
 ```
 
 ## 🔄 Updates & Migration
@@ -380,7 +380,7 @@ Team configurations can be updated via API without service restart:
 
 ```bash
 # Update team processors
-curl -X PUT http://localhost:3000/api/config/teams/frontend \
+curl -X PUT https://smart-trace-yr17.onrender.com/api/config/teams/frontend \
   -H "Content-Type: application/json" \
   -d '{"processors": ["email", "slack", "new-processor"]}'
 ```

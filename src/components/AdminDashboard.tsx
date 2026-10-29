@@ -97,7 +97,7 @@ const AdminDashboard = () => {
     processed: 0
   });
 
-  const API_BASE_URL = 'http://localhost:3000/api';
+  const API_BASE_URL = 'https://smart-trace-yr17.onrender.com/api';
 
   // Fetch feedback data
   const fetchFeedback = async () => {

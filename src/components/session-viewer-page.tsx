@@ -48,7 +48,7 @@ function SessionViewerPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  const API_BASE_URL = 'http://localhost:3000/api'
+  const API_BASE_URL = 'https://smart-trace-yr17.onrender.com/api'
 
   useEffect(() => {
     if (!id) {
