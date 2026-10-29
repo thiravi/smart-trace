@@ -43,37 +43,62 @@ class PerformanceSnapBackend {
       },
     }));
 
+    const getAllowedOrigins = (): string[] => {
+      const configured = (process.env.ALLOWED_ORIGINS || '')
+        .split(',')
+        .map((origin) => origin.trim())
+        .filter(Boolean);
+
+      return [
+        'http://localhost:3000',
+        'http://localhost:5173',
+        'http://localhost:8080',
+        'http://127.0.0.1:3000',
+        'http://127.0.0.1:5173',
+        'http://127.0.0.1:8080',
+        'https://smart-trace-yr17.onrender.com',
+        'https://smart-trace.onrender.com',
+        'https://*.onrender.com',
+        ...configured,
+      ];
+    };
+
+    const isAllowedOrigin = (origin: string | undefined): boolean => {
+      if (!origin) return true;
+
+      const normalizedOrigin = origin.replace(/\/$/, '');
+      const allowedOrigins = getAllowedOrigins().map((allowed) => allowed.replace(/\/$/, ''));
+
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        return true;
+      }
+
+      return allowedOrigins.some((allowed) => {
+        if (!allowed.includes('*')) return false;
+        const pattern = new RegExp(`^${allowed.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\\*/g, '.*')}$`, 'i');
+        return pattern.test(normalizedOrigin);
+      });
+    };
+
     // CORS configuration - Allow file:// protocol and development origins
     this.app.use(cors({
       origin: (origin, callback) => {
         // Allow requests with no origin (like mobile apps, curl, postman, or file:// protocol)
         if (!origin) return callback(null, true);
-        
-        // Define allowed origins
-        const allowedOrigins = [
-          'http://localhost:3000',
-          'http://localhost:5173',
-          'http://localhost:8080',
-          'http://127.0.0.1:3000',
-          'http://127.0.0.1:5173',
-          'http://127.0.0.1:8080',
-          ...(process.env.ALLOWED_ORIGINS?.split(',') || [])
-        ];
-        
+
         // Allow any localhost/127.0.0.1 origin in development
         if (process.env.NODE_ENV !== 'production') {
           if (origin.includes('localhost') || origin.includes('127.0.0.1') || origin === 'null') {
             return callback(null, true);
           }
         }
-        
-        // Check if origin is in allowed list
-        if (allowedOrigins.includes(origin)) {
+
+        if (isAllowedOrigin(origin)) {
           return callback(null, true);
         }
-        
-        // Reject the request
-        callback(new Error('Not allowed by CORS'));
+
+        // Reject the request with a clear error for debugging
+        callback(new Error(`Not allowed by CORS: ${origin}`));
       },
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
